@@ -13,6 +13,7 @@ namespace CriacaoComponentes
 
     public partial class Form1 : Form
     {
+        List<Produto> produtos = new List<Produto>();
         private bool rendered = false;
         public Form1()
         {
@@ -81,14 +82,19 @@ namespace CriacaoComponentes
                 int quant = int.Parse(txtQuant.Text);
                 string desc = txtDesc.Text;
                 Produto produto = new Produto(name, price, desc, quant);
+                produtos.Add(produto);
                 DataTable tabela = new DataTable();
+                
+
                 tabela.Columns.Add("Nome: ", typeof(string));
                 tabela.Columns.Add("Preço", typeof(Double));
                 tabela.Columns.Add("Descrição", typeof(string));
                 tabela.Columns.Add("Quantidade", typeof(int));
-                produto.ForEach(produto)
+                produtos.ForEach(produtos => tabela.Rows.Add(name,price,desc,quant));
+
+                dataGridView1.DataSource = tabela;
                 MessageBox.Show("Criado Com Sucesso!");
-                
+                this.rendered = false;
 
 
             };
