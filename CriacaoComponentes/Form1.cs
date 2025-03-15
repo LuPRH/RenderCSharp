@@ -86,7 +86,7 @@ namespace CriacaoComponentes
                 tabela.Columns.Add("Preço", typeof(Double));
                 tabela.Columns.Add("Descrição", typeof(string));
                 tabela.Columns.Add("Quantidade", typeof(int));
-                produto.ForEach
+                produto.ForEach(produto)
                 MessageBox.Show("Criado Com Sucesso!");
                 
 

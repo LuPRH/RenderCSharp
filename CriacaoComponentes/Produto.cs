@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace CriacaoComponentes
 {
-    public class Produto
+    internal class Produto
     {
-        public string Name { get; set; }
-        public double Price { get; set; }
-        public string Desc { get; set; }
-        public int Quant { get; set; }
+        private string Name { get; set; }
+        private double Price { get; set; }
+        private string Desc { get; set; }
+        private int Quant { get; set; }
 
+        private decimal PriceCE { get; set; }
         public Produto(string name, double price, string desc, int quant)
         {
             Name = name;
